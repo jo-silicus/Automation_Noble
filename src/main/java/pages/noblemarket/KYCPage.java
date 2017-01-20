@@ -286,7 +286,7 @@ public class KYCPage extends BasePage<KYCPage>{
 		}*/
 		citizenshipCountry.sendKeys("Ind");
 		citizenshipCountry.sendKeys("i");
-		commonAction.Wait(5000);
+		commonAction.Wait(1000);
 		citizenshipCountry.sendKeys("a");
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
 		countryList.get(0).click();
@@ -299,7 +299,7 @@ public class KYCPage extends BasePage<KYCPage>{
 		}	*/
 		country.sendKeys("Ind");
 		country.sendKeys("i");
-		commonAction.Wait(5000);
+		commonAction.Wait(1000);
 		country.sendKeys("a");
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
 		countryList.get(0).click();
@@ -311,13 +311,19 @@ public class KYCPage extends BasePage<KYCPage>{
 		commonAction.selectDropdown(documentType, "Proof of ID 1");
 		commonAction.selectDropdown(idType, PropertyDictionary.map.get("Passport")); //Passport
 		idNo.sendKeys("123456");	
-		idCountry.sendKeys("India");		
+		idCountry.sendKeys("Ind");
+		idCountry.sendKeys("i");
+		commonAction.Wait(1000);
+		idCountry.sendKeys("a");
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
+		countryList.get(0).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), calender.get(1), 9000);	
 		calender.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), calender.get(2), 9000);
 		calender.get(2).click();	
-		System.out.println(PropertyDictionary.map.get("UploadPath"));
-		upload1.sendKeys(PropertyDictionary.map.get("UploadPath"));	
+		String filePath = System.getProperty("user.dir")+PropertyDictionary.map.get("UploadPath");
+		System.out.println(filePath);
+		upload1.sendKeys(filePath);	
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGrid, 9000);
 		save.get(1).click();
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), next, 9000);
@@ -400,7 +406,7 @@ public class KYCPage extends BasePage<KYCPage>{
 		//commonAction.selectDropdown(selectHqCountry, "object:140");
 		selectHqCountry.sendKeys("Ind");
 		selectHqCountry.sendKeys("i");
-		commonAction.Wait(5000);
+		commonAction.Wait(1000);
 		selectHqCountry.sendKeys("a");
 		//commonAction.Wait(2000);
 		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), countryList.get(0), 30000);
@@ -421,15 +427,19 @@ public class KYCPage extends BasePage<KYCPage>{
 		alternatecallPhone.sendKeys("32012467890");
 		
 		callBackEmail.sendKeys("silicusTest@silicus.com");		
+		String filePath = System.getProperty("user.dir")+PropertyDictionary.map.get("UploadPath");
+		System.out.println(filePath);
 		commonAction.selectDropdown(selectEntityDocUpload, "Ownership Entity Legal Doc");
-		upload2.sendKeys(PropertyDictionary.map.get("UploadPath"));
-		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGridEntity, 9000);
+		upload2.sendKeys(filePath);
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGridEntity, 19000);
 		commonAction.selectDropdown(selectEnhancedDueDiligence,"AML Questionnaire");			
-		upload3.sendKeys(PropertyDictionary.map.get("UploadPath"));
-		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGridEdd, 9000);	
-		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(3), 2000);	
+		upload3.sendKeys(filePath);
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), uploadedDocGridEdd, 19000);	
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), save.get(3), 10000);	
+		commonAction.Wait(2000);
 		save.get(3).click();
-		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), entityNext, 9000);	
+		commonAction.Wait(2000);
+		commonAction.waitElementToBeClickable(webBrowser.getWebDriver(), entityNext, 19000);	
 		entityNext.click();
 				
 		return new KYCPage(webBrowser);

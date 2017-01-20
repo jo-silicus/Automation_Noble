@@ -47,7 +47,8 @@ public class Browser {
 			options.addArguments("test-type");
 			options.addArguments("ignore-certificate-errors");
 			caps.setCapability(ChromeOptions.CAPABILITY, options);
-			System.setProperty("webdriver.chrome.driver","D:\\Drivers\\chromedriver_win32\\chromedriver.exe");
+			System.out.println(System.getProperty("user.dir"));
+			System.setProperty("webdriver.chrome.driver",".//lib//chromedriver.exe");
 			driver = new ChromeDriver(caps);
 			
 			break;
