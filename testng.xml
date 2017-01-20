@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Noble Market Suite">
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+       <listener class-name="core.Listener" />
+  </listeners>
+	<parameter name="browser" value="chrome" />
+	<parameter name="environment" value="local" />
+	<parameter name="propertyfileName"
+		value=".//input-data//browser.properties,.//input-data//login.properties,.//input-data//testData.properties,.//input-data//AccountInfo1.properties,.//input-data//EntityInfo.properties,.//input-data//personalnfo.properties,.//input-data//tradeCommission.properties"/>
+	<test name="Noble Market Automation Test Report">
+		<classes>
+	         <!-- <class name="nobleMarketTest.LandingPageTest">
+		     </class>
+             <class name="nobleMarketTest.UserRegistrationPageTest">
+		     </class> 
+ 		     <class name="nobleMarketTest.LoginPageTest">
+		     </class>
+		 	 <class name="nobleMarketTest.HomePageTest">
+		     </class>
+		     <class name="nobleMarketTest.OrderEntryTest">
+		     </class> 
+		     <class name="nobleMarketTest.OrderBlotterTest">
+		     </class> 
+		      <class name="nobleMarketTest.NegotiatedPageTest">
+		     </class>     
+		      <class name="nobleMarketTest.ClientReportsPageTest">
+		     </class>
+		       <class name="nobleMarketTest.LandingPageTest">
+		     </class> 
+		      <class name="nobleMarketTest.AdminPageTest">
+		     </class>-->
+		      <class name="nobleMarketTest.KYCTest">
+		     </class> 
+		      <!-- <class name="nobleMarketTest.HomePageTest">
+		     </class> -->
+		    <!--  <class name = "nobleMarketTest.RFQPageTest"></class> -->
+		</classes>
+	</test> 
+</suite>
